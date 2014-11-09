@@ -28,7 +28,8 @@ module.exports = function (grunt) {
                 },
 
                 files: {
-                    '/jquery/jquery.min.js': 'jquery/dist/jquery.min.js',
+                    '/jquery/jquery.js': 'jquery/dist/jquery.js',
+                    '/foundation/foundation.js': 'foundation/js/foundation.js',
                     '/bootstrap/bootstrap.min.js': 'bootstrap/dist/js/bootstrap.min.js',
                     '/angular/angular.min.js': 'angular/angular.min.js',
                     '/angular/angular.js': 'angular/angular.js',
@@ -40,6 +41,7 @@ module.exports = function (grunt) {
                     destPrefix: 'css/vendor'
                 },
                 files: {
+                    '/foundation/foundation.css': 'foundation/css/foundation.css',
                     '/bootstrap/bootstrap.min.css': 'bootstrap/dist/css/bootstrap.css',
                     '/bootstrap/bootstrap-theme.min.css': 'bootstrap/dist/css/bootstrap-theme.css'
                 }

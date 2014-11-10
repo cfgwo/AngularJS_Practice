@@ -11,7 +11,7 @@ node_modules/
 bower_components/
 
 # ignore all files in the css/vendor directory
-css/vendor/**/*.css
+#css/vendor/**/*.css
 
 # ignore all files in the js/vendor directory
-js/vendor/**/*.js
+#js/vendor/**/*.js

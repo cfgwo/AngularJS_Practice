@@ -2,28 +2,24 @@
  * Created by eweng on 11/7/2014.
  */
 var myApp = angular.module("myAppName", []);
-
-myApp.directive("clock", function(){
-    return {
-        restrict : "E",
-        scope:{
-            timezone : "@"
-        },
-        template: "<div>12:00 pm {{timezone}}</div>"
-    };
+myApp.factory('Data', function(){
+   return  {message: "Hello from factory"};
 })
 
-
-myApp.directive("panel", function(){
-   return{
-        restrict:"E",
-        transclude: true,
-        scope:{
-            title: "@"
-        },
-        template:"<div style='border: 3px solid #000000'>" +
-            "<div class='alert-box'>{{title}}>" + "</div>" +
-            "<div ng-transclude></div>" +
-            "<div/>"
-   }
+myApp.filter('reverse', function(Data){
+    return function(text){
+        return text.split("").reverse().join("") + Data.message;
+    }
 })
+
+myApp.controller('FirstCtrl', function($scope, Data) {
+    $scope.data = Data;
+});
+
+myApp.controller('SecCtrl', function($scope, Data) {
+    $scope.data = Data;
+    $scope.reversedMessage = function(message){
+        return message.split("").reverse().join("");
+    }
+});
+

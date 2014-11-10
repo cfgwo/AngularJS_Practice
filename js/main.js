@@ -1,11 +1,16 @@
 /**
  * Created by eweng on 11/7/2014.
  */
-angular.module("myAppName", [])
-    .controller("FirstCtrl", function($scope) {
-        //$scope.data = {message: "Paul"};
-    })
-    .controller("SecCtrl", function($scope){
-        //$scope.data = {message: "Paul"};
+var myApp = angular.module("myAppName", []);
+myApp.factory('Data', function(){
+   return  {message: "Hello from factory"};
+})
 
-    });
+myApp.controller('FirstCtrl', function($scope, Data) {
+    $scope.data = Data;
+});
+
+myApp.controller('SecCtrl', function($scope, Data) {
+    $scope.data = Data;
+});
+

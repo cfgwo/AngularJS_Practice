@@ -3,5 +3,5 @@
  */
 angular.module("myAppName", [])
     .controller("FirstCtrl", function($scope) {
-        $scope.data = {message: "Thankks"};
+        $scope.data = {message: "Paul"};
     });

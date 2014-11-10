@@ -8,6 +8,9 @@
     <!--Include Bootstrap-->
     <link rel="stylesheet" href="css/vendor/foundation/foundation.css">
     <link rel="stylesheet" href="css/main.css">
+
+
+
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -16,8 +19,8 @@
     <script src="http://localhost:35729/livereload.js"></script>
 </head>
 <body>
-<div class="container-fluid" ng-app="" >
-    <div np-controller="FirstCtrl">
+<div class="container-fluid" ng-app="myAppName">
+    <div  ng-controller="FirstCtrl">
         <h1>{{ data.message + " world" }}</h1>
         <div class="{{ data.message }}">
             Wrap me with a foundtion component

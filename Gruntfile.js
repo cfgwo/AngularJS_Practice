@@ -6,11 +6,11 @@ module.exports = function (grunt) {
         watch: {
             css: {
                 options: {livereload: true},
-                files: ['css/**.css']
+                files: ['css/**/*.css']
             },
             script: {
                 options: {livereload: true},
-                files: ['**.js']
+                files: ['js/**/*.js']
             },
             html: {
                 options: {livereload: true},

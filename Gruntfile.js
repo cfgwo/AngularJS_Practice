@@ -10,7 +10,7 @@ module.exports = function (grunt) {
             },
             script: {
                 options: {livereload: true},
-                files: ['**.js']
+                files: ['js/**.js']
             },
             html: {
                 options: {livereload: true},

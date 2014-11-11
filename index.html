@@ -18,18 +18,10 @@
 <body>
     <div ng-controller="MainController" >
         <input ng-model="mydata.val">
-        <button ng-click="mydata='123'">123</button>
         <h1>{{ mydata.val }}</h1>
-        <div ng-controller="SubController" >
-            <input ng-model="mydata.val">
-            <h1>{{ mydata.val }}</h1>
-        </div>
 
+        <span ng-show="mydata.toolong">Name is too long!</span>
     </div>
-
-
-
-
 
 
 

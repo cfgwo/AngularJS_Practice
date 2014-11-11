@@ -6,12 +6,15 @@ var app = angular.module("app", []);
 
 // [ METHOD : 2 ] - DEVELOPMENT
 app.controller("MainController", function($scope){
-    //$scope.mydata = {}
+    $scope.mydata = {val: "jake"};
+
+    $scope.$watch('mydata.val', function(newval){
+        $scope.mydata.toolong = newval.length > 15;
+        console.log('Hi');
+    });
 });
 
 
-app.controller("SubController", function($scope){
-});
 
 
 

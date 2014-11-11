@@ -16,25 +16,10 @@
     <script src="http://localhost:35729/livereload.js"></script>
 </head>
 <body>
-    <h1>Hello World!</h1>
     <div ng-controller="MainController" >
-        <div ng-repeat="attr in ob">
-            {{ attr }}
-        </div>
+        <h1 ng-class="classVar">Hello There!</h1>
 
-        <div ng-repeat="element in myarr  track by $index">
-            {{ element }}:{{ $index }}
-            <span ng-show="$first">first</span>
-            <span ng-show="$middle">middle</span>
-            <span ng-show="$last">last</span>
-            <span ng-show="$even">even</span>
-            <span ng-show="$odd">odd</span>
-
-        </div>
-        <div ng-repeat-start="user in users  track by $index">
-            <strong>{{ user.name }}</strong>: {{ user.age }}
-        </div>
-        <hr ng-repeat-end>
+        <h1 ng-class="{orange:enableOrange, italic:enableItalic}">I am good</h1>
     </div>
 
 
@@ -45,7 +30,6 @@
 
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
-<!--<script src="js/vendor/angular/angular.js" type="text/javascript"></script>-->
 <script src="js/vendor/jquery/jquery.js" type="text/javascript"></script>
 <script src="js/vendor/foundation/foundation.js" type="text/javascript"></script>
 <script src="js/main.js" type="text/javascript"></script>

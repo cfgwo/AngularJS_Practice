@@ -6,7 +6,11 @@ var app = angular.module("app", []);
 
 // [ METHOD : 2 ] - DEVELOPMENT
 app.controller("MainController", function($scope){
+    //$scope.mydata = {}
+});
 
+
+app.controller("SubController", function($scope){
 });
 
 

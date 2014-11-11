@@ -5,30 +5,64 @@
 var app = angular.module("app", []);
 
 // [ METHOD : 2 ] - DEVELOPMENT
-app.controller("MainController", function($scope, myFactory, Auth){
-    console.log(myFactory.getdata());
-    console.log(myFactory.mydata);
+app.controller("MainController", function($scope, myFactory, myService){
+    console.log(myFactory.getData());
+    myFactory.addData("Bla Bla Bla");
+    console.log(myFactory.getData());
+
+    console.log(myService.getData());
+    myService.addData("Bla Bla Bla");
+    console.log(myService.getData());
 });
 
-app.factory("myFactory", function(){
+app.factory("myFactory", function() {
     // Private function
-    var mydata  = "this is some data";
-    var myfunct = function(){};
+    var myString = "this is some data";
+    var addToString = function (newStr) {
+        myString += newStr
+    }
     return {
-        getdata: function(){
-            return mydata;
-        }
+        getData: function(){
+            return "String contains: " + myString;
+        },
+        addData: addToString
     }
 });
 
-app.factory("Auth", function(){
-    var current_user = {};
-    return {
-        setUser : function(){},
-        login   : function(){},
-        logout  : function(){}
-    }
+/*app.service('myService', function(){
+    // Private function
+    var myString = "this is some data";
+    var addToString = function (newStr) {
+        myString += newStr
+    };
+
+    this.getData = function(){
+        return "String contains: " + myString;
+    };
+    this.addData = addToString;
+});*/
+// Coffee Script
+app.service("myService", ServiceClass);
+
+
+app.factory("myService", function(){
+    return new ServiceClass();
 });
+
+function ServiceClass(){
+    // Private function
+    var myString = "this is some data";
+    var addToString = function (newStr) {
+        myString += newStr
+    };
+
+    this.getData = function(){
+        return "String contains: " + myString;
+    };
+    this.addData = addToString;
+}
+
+
 /*
 Service Types:
 Constants

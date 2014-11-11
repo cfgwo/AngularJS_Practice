@@ -5,33 +5,22 @@
 var app = angular.module("app", []);
 
 // [ METHOD : 2 ] - DEVELOPMENT
-app.controller("MainController", function($scope, myFactory){
-    console.log(myFactory.getData());
-    myFactory.reverse();
-    console.log(myFactory.getData());
-});
+app.controller("MainController", ['$scope', 'DataService', function(b, c){
+    b.mydata = c.data;
+}]);
 
-app.factory("myFactory", function() {
-    // Private function
-    var myString = "this is some data";
-    var addToString = function (newStr) {
-        myString += newStr
-    }
+app.factory("DataService", ['AppendService', function(AppendService) {
     return {
-        getData: function(){ return myString},
-        setData: function(data) {myString = data},
-        addData: addToString
+        data: AppendService.append("This is service data")
     }
-});
+}]);
 
-app.config(function($provide){
-    $provide.decorator('myFactory', function($delegate){
-        $delegate.reverse = function(){
-            $delegate.setData($delegate.getData()
-                     .split('').reverse().join(''))
+app.factory('AppendService', function(){
+    return {
+        append: function(val){
+            return val + " and this too!"
         }
-        return $delegate
-    })
+    }
 })
 /*
 Service Types:

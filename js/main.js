@@ -5,17 +5,30 @@
 var app = angular.module("app", []);
 
 // [ METHOD : 2 ] - DEVELOPMENT
-app.controller("MainController", function($scope, constService, valService){
-    console.log(constService.attr, valService());
+app.controller("MainController", function($scope, myFactory, Auth){
+    console.log(myFactory.getdata());
+    console.log(myFactory.mydata);
 });
 
+app.factory("myFactory", function(){
+    // Private function
+    var mydata  = "this is some data";
+    var myfunct = function(){};
+    return {
+        getdata: function(){
+            return mydata;
+        }
+    }
+});
 
-app.constant('twitterAPI', {url: "api.twitter.com/v1/"});
-app.constant('constService', {attr: "this is const data!"});
-
-app.value('valService', function(){ return "this is the returned from a fn";});
-
-
+app.factory("Auth", function(){
+    var current_user = {};
+    return {
+        setUser : function(){},
+        login   : function(){},
+        logout  : function(){}
+    }
+});
 /*
 Service Types:
 Constants

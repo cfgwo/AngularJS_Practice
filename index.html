@@ -16,12 +16,14 @@
     <script src="http://localhost:35729/livereload.js"></script>
 </head>
 <body>
-    <div ng-controller="MainController" >
-        <input ng-model="mydata.val">
-        <h1>{{ mydata.val }}</h1>
+<div ng-controller="MainController">
+    <div>Num: {{ num }}</div>
+    <div>Nums: {{ nums }}</div>
 
-        <span ng-show="mydata.toolong">Name is too long!</span>
-    </div>
+    <button ng-click="increment()">Increment</button>
+    <button ng-click="breakit()">Break it</button>
+
+</div>
 
 
 

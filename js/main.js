@@ -6,11 +6,15 @@ var app = angular.module("app", []);
 
 // [ METHOD : 2 ] - DEVELOPMENT
 app.controller("MainController", function($scope){
-    $scope.mydata = {val: "jake"};
+    $scope.num = 0;
+    $scope.nums = [];
 
-    $scope.$watch('mydata.val', function(newval){
-        $scope.mydata.toolong = newval.length > 15;
-        console.log('Hi');
+    $scope.increment = function(){
+        $scope.num ++;
+    };
+
+    $scope.breakit = $scope.$watch('num', function(){
+       $scope.nums.push($scope.num);
     });
 });
 

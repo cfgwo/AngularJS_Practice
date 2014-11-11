@@ -22,21 +22,7 @@
 </head>
 <body>
 <div ng-controller="MainController">
-   <!-- <input ng-model="myfilter.upper">
-    {{ myfilter.upper | uppercase}}-->
-    <h1>Filter By Name and limit to 2</h1>
-    <input ng-model="myfilter.name">
-    <div ng-repeat="user in mydata.arr | filter: myfilter | orderBy:'name' | limitTo:-2">
-        {{ user }}
-    </div>
 
-    <hr>
-
-    <h1>Filter By Age</h1>
-    <input ng-model="myfilter.age">
-    <div ng-repeat="user2 in mydata.arr | filter: myfilter | orderBy:'age'">
-        {{ user2 }}
-    </div>
 </div>
 
 

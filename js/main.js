@@ -5,14 +5,10 @@
 var app = angular.module("app", []);
 
 // [ METHOD : 2 ] - DEVELOPMENT
-app.controller("MainController", function($scope, myFactory, myTest){
+app.controller("MainController", function($scope, myFactory){
     console.log(myFactory.getData());
-    myFactory.addData("Bla Bla Bla");
+    myFactory.reverse();
     console.log(myFactory.getData());
-
-    console.log(myTest.getData());
-    myTest.addData("Bla Bla Bla");
-    console.log(myTest.getData());
 });
 
 app.factory("myFactory", function() {
@@ -22,36 +18,21 @@ app.factory("myFactory", function() {
         myString += newStr
     }
     return {
-        getData: function(){
-            return "String contains: " + myString;
-        },
+        getData: function(){ return myString},
+        setData: function(data) {myString = data},
         addData: addToString
     }
 });
 
-app.provider("myTest", function(){
-    var myString = "this is some data";
-    var addToString = function (newStr) {
-        myString += newStr
-    }
-    return {
-        setData:function(data){
-            myString = data
-        },
-        $get: function(){
-            return {
-                getData: function(){
-                    return "String contains: " + myString;
-                },
-                addData: addToString
-            }
+app.config(function($provide){
+    $provide.decorator('myFactory', function($delegate){
+        $delegate.reverse = function(){
+            $delegate.setData($delegate.getData()
+                     .split('').reverse().join(''))
         }
-    }
+        return $delegate
+    })
 })
-
-app.config(function(myTestProvider){
-    myTestProvider.setData('some different string from config')
-});
 /*
 Service Types:
 Constants

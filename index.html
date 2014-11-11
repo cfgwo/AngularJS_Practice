@@ -22,7 +22,13 @@
 </head>
 <body>
 <div ng-controller="MainController">
-    <span ng-cloak="true">{{ mydata }}<div>Hey There!</div></span>
+   <!-- <input ng-model="myfilter.upper">
+    {{ myfilter.upper | uppercase}}-->
+
+    <input ng-model="myfilter.age">
+    <div ng-repeat="user in mydata.arr | filter: myfilter">
+        {{ user }}
+    </div>
 </div>
 
 

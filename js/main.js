@@ -6,7 +6,7 @@ var app = angular.module("app", []);
 
 // [ METHOD : 2 ] - DEVELOPMENT
 app.controller("MainController", function($scope){
-    $scope.mydata = "This is some data"
+    $scope.mydata = {arr: [{name:"jane", age:35}, {name:"jake", age:34},{name:"steven", age:44}, {name:"hank", age:44}]}
 });
 
 

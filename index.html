@@ -17,11 +17,13 @@
 </head>
 <body>
     <div ng-controller="MainController" >
-        <h1 ng-class="classVar">Hello There!</h1>
-
-        <h1 ng-class="{orange:enableOrange, italic:enableItalic}">I am good</h1>
+        <div ng-include="'test.html'">
+        </div>
     </div>
 
+    <script type="text/ng-template" id="test.html">
+        <h1>My template</h1>
+    </script>
 
 
 
